@@ -3,7 +3,7 @@
  
 # --- REQUIRED: replace with your throwaway GitHub account + repo name ---
 owner: goalsmapper
-repo: goalsmapper-status
+repo: uptime-status
  
 # The sites to monitor
 sites:
