@@ -20,13 +20,17 @@ status-website:
   cname: status.goalsmapper.com   # your custom domain
   name: GoalsMapper Status
   introTitle: "**GoalsMapper** Status"
-  introMessage: Real-time status and uptime for GoalsMapper services.
+  introMessage: Check the current availability of GoalsMapper services and stay updated on incidents and scheduled maintenance.
   logoUrl: https://static.goalsmapper.com/public/platform/goalsmapper/logo.png
   favicon: https://static.goalsmapper.com/public/platform/goalsmapper/GM-Icon.png
   theme: light          # or dark
   navbar:
     - title: Status
       href: /
+    - title: Website History
+      href: /history/goals-mapper-website
+    - title: App History
+      href: /history/goals-mapper-app
     - title: GoalsMapper
       href: https://goalsmapper.com
  
