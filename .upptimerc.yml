@@ -1,20 +1,32 @@
 # Upptime configuration for GoalsMapper
 # Docs: https://upptime.js.org/docs/configuration
- 
+
 # --- REQUIRED: replace with your throwaway GitHub account + repo name ---
 owner: goalsmapper
 repo: uptime-status
- 
+
 # The sites to monitor
+# `slug` is pinned explicitly so history URLs and navbar links never shift
+# if a site is renamed later.
 sites:
   - name: GoalsMapper Website
+    slug: goals-mapper-website
     url: https://goalsmapper.com
- 
-  - name: GoalsMapper App
+
+  - name: GoalsMapper Platform
+    slug: goals-mapper-platform
     url: https://live.goalsmapper.com
     # live.goalsmapper.com redirects to the login page — Upptime follows
     # redirects automatically and treats a final 200 as "up".
- 
+
+  - name: GM Rewards
+    slug: gm-rewards
+    url: https://rewards.goalsmapper.com
+    headers:
+      # The load balancer in front of rewards.goalsmapper.com returns 403 to non-browser
+      # user agents, so the checker identifies as a browser to get a real response.
+      - "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
 # Status page settings
 status-website:
   cname: status.goalsmapper.com   # your custom domain
@@ -29,10 +41,21 @@ status-website:
       href: /
     - title: Website History
       href: /history/goals-mapper-website
-    - title: App History
-      href: /history/goals-mapper-app
+    - title: Platform History
+      href: /history/goals-mapper-platform
+    - title: Rewards History
+      href: /history/gm-rewards
     - title: GoalsMapper
       href: https://goalsmapper.com
- 
+
+  # 90-day uptime bars (status.claude.com style) replacing the response-time
+  # line graph on each card. Both files live in `assets/` and are copied to the
+  # site root when the status page is built.
+  links:
+    - rel: stylesheet
+      href: /uptime-bars.css
+  scripts:
+    - src: /uptime-bars.js
+
 # How often checks run (GitHub Actions cron). Default is every 5 minutes.
 # Leave as-is unless you want to change frequency.

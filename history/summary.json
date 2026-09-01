@@ -18,10 +18,10 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "GoalsMapper App",
+    "name": "GoalsMapper Platform",
     "url": "https://live.goalsmapper.com",
     "icon": "https://icons.duckduckgo.com/ip3/live.goalsmapper.com.ico",
-    "slug": "goals-mapper-app",
+    "slug": "goals-mapper-platform",
     "status": "up",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
