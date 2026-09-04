@@ -22,6 +22,8 @@ sites:
   - name: GM Rewards
     slug: gm-rewards
     url: https://rewards.goalsmapper.com
+    # Without `icon`, Upptime falls back to the DuckDuckGo favicon service.
+    icon: https://static.goalsmapper.com/public/platform/goalsmapper/gm-rewards-colored.svg
     headers:
       # The load balancer in front of rewards.goalsmapper.com returns 403 to non-browser
       # user agents, so the checker identifies as a browser to get a real response.
@@ -68,6 +70,12 @@ status-website:
     /* Drop the response-time line graph that Upptime paints as a card background. */
     section.live-status article.graph {
       background-image: none !important;
+    }
+
+    /* The footer text is blanked via `i18n.footer` below; Upptime still renders an
+       empty <footer><p></p> with a 3rem top margin, so hide the element itself. */
+    footer {
+      display: none;
     }
 
     .gm-bars {
@@ -149,6 +157,14 @@ status-website:
     }
   scripts:
     - src: /uptime-bars.js
+
+# String overrides for the status page. Upptime shallow-merges these over its
+# defaults (status-page/i18n.yml), so only the listed keys change.
+# `footer` defaults to "This page is [open source]($REPO), powered by
+# [Upptime](https://upptime.js.org)" — blanked here. Upptime is MIT-licensed, so
+# the LICENSE file is what we're required to keep, not the on-page credit.
+i18n:
+  footer: ""
 
 # How often checks run (GitHub Actions cron). Default is every 5 minutes.
 # Leave as-is unless you want to change frequency.
